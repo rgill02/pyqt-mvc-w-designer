@@ -15,9 +15,13 @@ pip install pyqt-mvc-w-designer
 
 ### Design Your Widgets in Qt Designer
 Create a new widget in Qt Designer. This can be for your main widget or a child widget; the process is exactly the same.
-TODO insert pic here
+
+![Creating a new widget](https://github.com/rgill02/pyqt-mvc-w-designer/blob/master/doc/imgs/designer_startup_window.PNG)
+
 Insert all the elements you want such as labels, buttons, etc. Give them recognizeable names, set their properties, and lay them out how you would like. If you want to embed a child widget in your widget just insert a regular "widget" as a placeholder as shown below. This is the process for embedding one of your own custom widgets, or one of the included widgets, for example the matplotlib plot widget.
-TODO insert pic here
+
+![Embedding Child Widget](https://github.com/rgill02/pyqt-mvc-w-designer/blob/master/doc/imgs/designing_example_widg.PNG)
+
 In the example above we are going to embed a matplotlib plot widget where our placeholder widget is. Once you have finished designing your widget, save the design as a ".ui" file, and you are done! You have now completed the "View" portion of the Model-View-Controller pattern.
 
 ### Create Controllers for Your Widgets
@@ -74,8 +78,19 @@ The first argument is the type of controller for your main controller, not an in
 gui_runner.run()
 ```
 You have now created a PyQt application following the MVC pattern with this framework. Refer to [Example_Ctrlr.py](https://github.com/rgill02/pyqt-mvc-w-designer/blob/master/src/pyqt_mvc_w_designer/Example_Ctrlr.py) and [example_gui.py](https://github.com/rgill02/pyqt-mvc-w-designer/blob/master/src/example_gui.py) for the full code files for this example. Images of the example application are shown below with and without the console visible. This example application prints a user input message to the console at different logging levels and showcases the matplotlib plot widget by plotting a random signal. You can take a look at [example_widg.ui](https://github.com/rgill02/pyqt-mvc-w-designer/blob/master/src/pyqt_mvc_w_designer/ui/example_widg.ui) and [mpl_widg.ui](https://github.com/rgill02/pyqt-mvc-w-designer/blob/master/src/pyqt_mvc_w_designer/ui/mpl_widg.ui) for reference on how to design widgets like this. I'd recommend loading the UI files in Qt Designer.
-TODO insert pic with no console
-TODO inser pic with console
+
+![Example Application with No Console](https://github.com/rgill02/pyqt-mvc-w-designer/blob/master/doc/imgs/example_app_no_console.PNG)
+
+![Example Application with Console](https://github.com/rgill02/pyqt-mvc-w-designer/blob/master/doc/imgs/example_app_with_console.PNG)
+
+## Included Widgets/Controllers
+TODO add tutorial for plot widget
 
 ## How to Contribute to pyqt-mvc-w-designer
 TODO
+
+## Author
+Ryan Gill
+
+## Support
+Post an issue with what you need help with in the [issue tracker](https://github.com/rgill02/pyqt-mvc-w-designer/issues) and I'll do my best to get back to you.
