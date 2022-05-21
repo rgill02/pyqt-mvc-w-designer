@@ -12,6 +12,7 @@ from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT
 #Our imports
 from .Abstract_Ctrlr import Abstract_Ctrlr
 from .Mpl_Canvas import Mpl_Canvas
+from . import ui as ui_code
 
 ################################################################################
 ###                                Class Def                                 ###
@@ -32,10 +33,7 @@ class Mpl_Ctrlr(Abstract_Ctrlr):
 		NOTES:
 		"""
 		#Call parent constructor
-		ui_file = "ui" + os.sep + "mpl_widg.ui"
-		file_stream = pkg_resources.resource_stream(__name__, ui_file)
-		ui_content = file_stream.read().decode()
-		super().__init__(widg, ui_content, parent=parent, logger=logger)
+		super().__init__(widg, ui_code.mpl_widg, parent=parent, logger=logger)
 
 		#Setup plot
 		self.plot_widg = Mpl_Canvas()

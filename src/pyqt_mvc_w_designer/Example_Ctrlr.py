@@ -14,6 +14,7 @@ from PyQt5.QtGui import QTextCursor
 #Our imports
 from .Abstract_Ctrlr import Abstract_Ctrlr
 from .Mpl_Ctrlr import Mpl_Ctrlr
+from . import ui as ui_code
 
 ################################################################################
 ###                                Class Def                                 ###
@@ -34,10 +35,8 @@ class Example_Ctrlr(Abstract_Ctrlr):
 		NOTES:
 		"""
 		#Call parent constructor
-		ui_file = "ui" + os.sep + "example_widg.ui"
-		file_stream = pkg_resources.resource_stream(__name__, ui_file)
-		ui_content = file_stream.read().decode()
-		super().__init__(widg, ui_content, parent=parent, logger=logger)
+		super().__init__(widg, ui_code.example_widg, parent=parent, 
+						 logger=logger)
 
 		#Setup mpl widget
 		self.mpl_ctrlr = Mpl_Ctrlr(self.widg.mpl_widg, self, self.logger)

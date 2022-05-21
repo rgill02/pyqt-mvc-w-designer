@@ -12,6 +12,7 @@ from PyQt5.QtGui import QTextCursor
 #Our imports
 from .Abstract_Ctrlr import Abstract_Ctrlr
 from .Callback_Log_Handler import Callback_Log_Handler
+from . import ui as ui_code
 
 ################################################################################
 ###                                Class Def                                 ###
@@ -35,10 +36,7 @@ class Main_Win_Ctrlr(Abstract_Ctrlr):
 		NOTES:
 		"""
 		#Call parent constructor
-		ui_file = "ui" + os.sep + "main_window.ui"
-		file_stream = pkg_resources.resource_stream(__name__, ui_file)
-		ui_content = file_stream.read().decode()
-		super().__init__(widg, ui_content)
+		super().__init__(widg, ui_code.main_window)
 
 		#Setup logger
 		self.logger = logging.getLogger("GUI")
